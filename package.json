@@ -1,14 +1,15 @@
 {
-  "name": "observableproperties",
-  "version": "1.0.0",
+  "name": "observable-property-changes",
+  "version": "1.0.1",
   "description": "A small utility that can be applied to a class in order to observe changes to its properties with RxJS",
-  "main": "index.ts",
+  "main": "index.js",
   "scripts": {
+    "prepublish": "tsc",
     "test": "tsc && ava"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pettersa/observableproperties.git"
+    "url": "git+https://github.com/pettersa/observablepropertychanges.git"
   },
   "keywords": [
     "rxjs",
@@ -18,9 +19,9 @@
   "author": "Petter Sælen",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/pettersa/observableproperties/issues"
+    "url": "https://github.com/pettersa/observablepropertychanges/issues"
   },
-  "homepage": "https://github.com/pettersa/observableproperties#readme.md",
+  "homepage": "https://github.com/pettersa/observablepropertychanges#observable-properties",
   "dependencies": {
     "rxjs": "^6.5.5"
   },
