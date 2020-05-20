@@ -2,9 +2,9 @@
   "name": "observableproperties",
   "version": "1.0.0",
   "description": "A small utility that can be applied to a class in order to observe changes to its properties with RxJS",
-  "main": "index.js",
+  "main": "index.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "tsc && ava"
   },
   "repository": {
     "type": "git",
@@ -20,5 +20,12 @@
   "bugs": {
     "url": "https://github.com/pettersa/observableproperties/issues"
   },
-  "homepage": "https://github.com/pettersa/observableproperties#readme"
+  "homepage": "https://github.com/pettersa/observableproperties#readme.md",
+  "dependencies": {
+    "rxjs": "^6.5.5"
+  },
+  "devDependencies": {
+    "@ava/typescript": "^1.1.1",
+    "ava": "^3.8.2"
+  }
 }
