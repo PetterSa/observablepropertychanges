@@ -1,0 +1,24 @@
+{
+  "name": "observableproperties",
+  "version": "1.0.0",
+  "description": "A small utility that can be applied to a class in order to observe changes to its properties with RxJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pettersa/observableproperties.git"
+  },
+  "keywords": [
+    "rxjs",
+    "mixin",
+    "utility"
+  ],
+  "author": "Petter Sælen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pettersa/observableproperties/issues"
+  },
+  "homepage": "https://github.com/pettersa/observableproperties#readme"
+}
