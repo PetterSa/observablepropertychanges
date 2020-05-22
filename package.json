@@ -4,7 +4,7 @@
   "description": "A small utility that can be applied to a class in order to observe changes to its properties with RxJS",
   "main": "index.js",
   "scripts": {
-    "prepublish": "tsc",
+    "prepublishOnly": "tsc --declaration true",
     "test": "tsc && ava"
   },
   "repository": {
