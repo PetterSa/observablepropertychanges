@@ -14,18 +14,18 @@ https://github.com/rdking/proposal-proxy-transparency/issues
 
 When this gets resolved I will fix this! Looking forward to it!
 
-# Usage example
+## Usage example
 ```shell script
 npm i observable-property-changes
 ```
 
 ```ts
-import ObservablePropertyChanges from 'observable-property-changes';
+import ObservablePropertyChanges, { WithPropertyObserver } from 'observable-property-changes';
 class Example {
     prop = 'A value'
 }
 const ObservableExample = ObservablePropertyChanges(Example);
-const observableExample = new ObservableExample();
+const observableExample: Example & WithPropertyObserver = new ObservableExample();
 observableExample.observableForProperty('prop').subscribe(prop => console.log('Prop changed value to ' + prop))
 
 observableExample.prop = 'Another value';
