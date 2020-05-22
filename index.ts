@@ -1,14 +1,16 @@
 import {Observable, Subscriber} from 'rxjs';
 
+class PropertySubscriberMap <This, KeyOfThis extends keyof This> extends Map<KeyOfThis, Subscriber<This[KeyOfThis]>[]> {}
+
 export interface WithPropertyObserver {
-    propertySubscribers: Map<keyof this, Subscriber<this[keyof this]>[]>;
-    observableForProperty(property: keyof this): Observable<this[keyof this]>;
+    propertySubscribers: PropertySubscriberMap<this, keyof this>;
+    observableForProperty<Property extends keyof this>(property: Property): Observable<this[Property]> ;
 }
 
 type Constructor<T = {}> = new (...args: any[]) => T;
 export default function ObservablePropertyChanges<AnyClass extends Constructor>(anyClass: AnyClass) {
     return class ClassWithPropertyObserver extends anyClass implements WithPropertyObserver {
-        propertySubscribers = new Map<keyof this, Subscriber<this[keyof this]>[]>();
+        propertySubscribers = new PropertySubscriberMap<this, keyof this>();
 
         constructor(...props: any[]) {
             super(...props);
@@ -24,7 +26,7 @@ export default function ObservablePropertyChanges<AnyClass extends Constructor>(
             });
         }
 
-        observableForProperty(property: keyof this): Observable<this[keyof this]> {
+        observableForProperty<Property extends keyof this>(property: Property): Observable<this[Property]> {
             return new Observable(subscriber => {
                 if (!this.propertySubscribers.has(property)) {
                     this.propertySubscribers.set(property, []);
