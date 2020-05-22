@@ -1,7 +1,11 @@
 import {Observable, Subscriber} from 'rxjs';
 
+export interface WithPropertyObserver {
+    observableForProperty(property: keyof this): Observable<this[keyof this]>;
+}
+
 export default function ObservablePropertyChanges<AnyObject extends new (...args: any[]) => object>(anyObject: AnyObject) {
-    return class ClassWithPropertyObserver extends anyObject {
+    return class ClassWithPropertyObserver extends anyObject implements WithPropertyObserver {
         private propertySubscribers = new Map<keyof this, Subscriber<this[keyof this]>[]>();
 
         constructor(...props: any[]) {
