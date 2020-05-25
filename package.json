@@ -1,15 +1,15 @@
 {
   "name": "observable-property-changes",
-  "version": "1.1.2",
+  "version": "1.1.4",
   "description": "A small utility that can be applied to a class in order to observe changes to its properties with RxJS",
   "main": "index.js",
   "scripts": {
-    "prepublishOnly": "tsc --declaration true",
+    "prepublishOnly": "tsc",
     "test": "tsc && ava"
   },
   "files": [
     "*.js",
-    "*.d.ts",
+    "*.ts",
     "LICENSE",
     "package.json"
   ],
